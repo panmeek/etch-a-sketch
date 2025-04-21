@@ -4,6 +4,8 @@ gridSizeSelector.addEventListener("input", (event) => {
     createGrid(gridSize);
 })
 
+const randomColorMode = document.querySelector(".random-color-mode");
+
 const gridSizeText = document.querySelector(".grid-size-text");
 
 function createGrid(gridSize = 16) {
@@ -33,7 +35,12 @@ function createGrid(gridSize = 16) {
 }
 
 function paintElement(event) {
-    event.target.style.backgroundColor = "black";
+    let color = "black";
+    if (randomColorMode.checked) {
+        color = getRandomColor()
+    }
+
+    event.target.style.backgroundColor = color;
 }
 
 function getRandomColor() {
