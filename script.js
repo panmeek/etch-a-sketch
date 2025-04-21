@@ -4,6 +4,8 @@ gridSizeSelector.addEventListener("input", (event) => {
     createGrid(gridSize);
 })
 
+const gridSizeText = document.querySelector(".grid-size-text");
+
 function createGrid(gridSize = 16) {
     if (document.body.contains(document.querySelector(".grid-container"))) {
         document.querySelector(".grid-container").remove();
@@ -26,6 +28,8 @@ function createGrid(gridSize = 16) {
 
         gridContainer.appendChild(gridRow);
     }
+
+    gridSizeText.textContent = `Grid size: ${gridSize}x${gridSize}`
 }
 
 function paintElement(event) {
