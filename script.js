@@ -1,4 +1,3 @@
-const gridContainer = document.querySelector(".grid-container");
 const gridSizeSelector = document.querySelector(".grid-size-selector");
 gridSizeSelector.addEventListener("input", (event) => {
     gridSize = event.target.value;
@@ -6,7 +5,12 @@ gridSizeSelector.addEventListener("input", (event) => {
 })
 
 function createGrid(gridSize = 16) {
-    gridContainer.innerHTML = "";
+    if (document.body.contains(document.querySelector(".grid-container"))) {
+        document.querySelector(".grid-container").remove();
+    }
+    const gridContainer = document.createElement("div");
+    gridContainer.classList.add("grid-container");
+    document.body.appendChild(gridContainer);
 
     for (let i = 0; i < gridSize; i++) {
         const gridRow = document.createElement("div");
