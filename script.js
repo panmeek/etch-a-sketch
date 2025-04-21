@@ -22,8 +22,11 @@ function createGrid(gridSize = 16) {
 
         for (let j = 0; j < gridSize; j++) {
             const gridElement = document.createElement("div");
+            const gridElementColor = document.createElement("div");
+            gridElementColor.classList.add("grid-element-color");
             gridElement.classList.add("grid-element");
-            gridElement.addEventListener("mouseover", paintElement);
+            gridElementColor.addEventListener("mouseover", paintElement);
+            gridElement.appendChild(gridElementColor);
 
             gridRow.appendChild(gridElement);
         }
@@ -41,6 +44,7 @@ function paintElement(event) {
     }
 
     event.target.style.backgroundColor = color;
+    event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
 }
 
 function getRandomColor() {

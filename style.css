@@ -29,8 +29,14 @@ body {
 }
 
 .grid-element {
+    display: flex;
     border: solid 1px black;
     flex: auto;
+}
+
+.grid-element-color {
+    opacity: 0;
+    flex: 1;
 }
 
 .grid-size {
