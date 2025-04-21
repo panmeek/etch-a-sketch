@@ -16,9 +16,10 @@ body {
 .grid-container {
     display: flex;
     flex-wrap: wrap; 
-    flex: 0 0 960px;
+    flex: 960px;
     width: 960px;
     border: solid 1px black;
+    margin-bottom: 48px;
 }
 
 .grid-row {
@@ -29,4 +30,8 @@ body {
 .grid-element {
     border: solid 1px black;
     flex: auto;
+}
+
+.grid-size-text {
+    font-size: 24px;
 }
