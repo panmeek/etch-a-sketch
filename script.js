@@ -33,7 +33,15 @@ function createGrid(gridSize = 16) {
 }
 
 function paintElement(event) {
-    event.target.style.backgroundColor = "black";
+    event.target.style.backgroundColor = getRandomColor();
+}
+
+function getRandomColor() {
+    let red = Math.random() * 255;
+    let green = Math.random() * 255;
+    let blue = Math.random() * 255;
+
+    return `rgb(${red} ${green} ${blue})`;
 }
 
 createGrid();
